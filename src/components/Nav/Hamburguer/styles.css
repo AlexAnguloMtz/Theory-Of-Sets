@@ -1,0 +1,72 @@
+.hamburguer {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    position: absolute;
+    top: 12px;
+    right: 13px;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hamburguer__line {
+    background-color: white;
+    border-radius: 10px;
+    width: 25px;
+    height: 3px;
+    position: absolute;
+    transition: transform 500ms ease;
+}
+
+.hamburguer .first {
+    transform: translateY(-6px);
+}
+
+.hamburguer .third {
+    transform: translateY(6px);
+}
+
+.nav.active .first,
+.nav.active .third {
+    transform: translateY(0px);
+}
+
+.nav.active .first,
+.nav.active .third {
+    animation-duration: 300ms;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+}
+
+.nav.active .first {
+    animation-name: rotate-left;
+}
+
+.nav.active .third {
+    animation-name: rotate-right;
+}
+
+.nav.active .second {
+    transition: opacity 300ms ease 200ms;
+    opacity: 0;
+}
+
+@keyframes rotate-left {
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes rotate-right {
+    to {
+        transform: rotate(-45deg);
+    }
+}
